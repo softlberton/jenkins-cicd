@@ -31,7 +31,7 @@ This document provides guidelines for configuring **bare-metal Mac Minis** (16â€
 - **Xcode** (latest stable version)
 - **Xcode Command Line Tools**
 - **CocoaPods**
-- **fastlane**
+- **Fastlane**
 
 ---
 
