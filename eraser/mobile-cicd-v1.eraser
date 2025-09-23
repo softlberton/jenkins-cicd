@@ -1,0 +1,56 @@
+title Mobile CI/CD Pipeline with Jenkins for Android & iOS
+
+Developers [icon: users]
+BitBucket Repository [icon: bitbucket]
+Artifactory Registry [icon: gcp-artifact-registry]
+Google Play Store [icon: google-play]
+Apple App Store [icon: appstore]
+
+// Disable notification flow
+// Notification Channels [icon: bell]
+
+// Disable rollback flow
+// Rollback Mechanism [icon: rotate-ccw]
+
+"Jenkins CI/CD System" [icon: jenkins] {
+  Jenkins Master [icon: jenkins, label: "Master"]
+
+  Android Agent [icon: smartphone, label: "Android Agent"] {
+    Android Build [icon: android, label: "Build/Test"]
+    Android SonarQube [icon: sonarqube, label: "SonarQube"]
+    APK Artifact [icon: file, label: "APK"]
+  }
+
+  iOS Agent [icon: smartphone, label: "iOS Agent"] {
+    iOS Build [icon: apple, label: "Build/Test"]
+    iOS SonarQube [icon: sonarqube, label: "SonarQube"]
+    IPA Artifact [icon: file, label: "IPA"]
+  }
+}
+
+// Connections
+Developers > BitBucket Repository: push code
+BitBucket Repository > Jenkins Master: webhook trigger
+
+Jenkins Master > Android Agent
+Jenkins Master > iOS Agent
+
+// Android pipeline
+Android Build > Android SonarQube: quality gate
+Android Build > APK Artifact
+APK Artifact > Artifactory Registry: upload
+APK Artifact > Google Play Store: deploy
+
+// iOS pipeline
+iOS Build > iOS SonarQube: quality gate
+iOS Build > IPA Artifact
+IPA Artifact > Artifactory Registry: upload
+IPA Artifact > Apple App Store: deploy
+
+// Notifications
+// Jenkins Master > Notification Channels: build status & alerts
+
+// Rollback
+// Jenkins Master > Rollback Mechanism: trigger rollback
+// Jenkins Master < Android Build: on failure
+// Jenkins Master < iOS Build: on failure
