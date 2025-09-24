@@ -6,7 +6,7 @@
 
 ## Jenkins CI/CD Pipeline Workflow
 
-
+![diagram-layer-1](../../media/gitflow-cicd.png)
 
 ## Overview
 
