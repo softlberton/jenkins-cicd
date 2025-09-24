@@ -1,6 +1,12 @@
 # Mobile CI/CD Pipeline with Jenkins for Android & iOS
 
-![diagram](../../media/jenkins-mobile-cicd-v1-eraser.png)
+## Jenkins Bare-Metal Architecture
+
+![diagram-layer-1](../../media/jenkins-baremetal-macos-agents-v3.png)
+
+## Jenkins CI/CD Pipeline Workflow
+
+
 
 ## Overview
 
